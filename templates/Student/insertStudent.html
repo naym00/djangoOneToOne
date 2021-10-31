@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Student</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: powderblue;
+        }
+        header{
+            background-size: cover;
+            background-position: center;
+        }
+        .First_Block {
+            height: 200px;
+        }
+        .Home {
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+        .StudentList {
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+        .Home:link, .Home:visited, .StudentList:link, .StudentList:visited {
+            background-color: darkcyan;
+            color: white;
+            font-size: 30px;
+            margin: 5px;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .Home:hover, .Home:active, .StudentList:hover, .StudentList:active {
+            background-color: black;
+            font-size: 50px;
+        }
+        .HeadLine {
+            text-align: center;
+            font-size: 55px;
+        }
+        .Second_Block {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        input[type=text], input[type=number], select {
+            font-family: arial, sans-serif;
+            font-size: 20px;
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            font-family: arial, sans-serif;
+            font-size: 20px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class ="First_Block">
+            <a class="Home" href="/" role="button">Home</a>
+            <a class="StudentList" href="/studentlist" role="button">Student List</a>
+            <p class="HeadLine">{{ text }}</p>
+        </div>
+
+        <div class ="Second_Block">
+            <form method="POST">
+                {% csrf_token %}
+                <h3>{{ data.as_p }}</h3>
+                <input class="Submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </header>
+</body>
+</html>

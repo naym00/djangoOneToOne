@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-size: cover;
+            background-position: center;
+        }
+        .First_Block {
+            height: 200px;
+        }
+        .Home {
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+        .InsertStudent {
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+        .Home:link, .Home:visited, .InsertStudent:link, .InsertStudent:visited {
+            background-color: darkcyan;
+            color: white;
+            font-size: 30px;
+            margin: 10px;
+            padding: 14px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .Home:hover, .Home:active, .InsertStudent:hover, .InsertStudent:active {
+            background-color: black;
+            font-size: 50px;
+        }
+        .HeadLine {
+            text-align: center;
+            font-size: 80px;
+        }
+        .Second_Block{
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="First_Block">
+        <a class="Home" href="/" role="button">Home</a>
+        <a class="InsertStudent" href="/insertstudent" role="button">Insert Student</a>
+        <p class="HeadLine">{{ headLine }}</p>
+    </div>
+    <div class="Second_Block">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Student Roll</th>
+                <th>Semester</th>
+                <th>Phone Number</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+            {% for student in allStudent %}
+            <tr>
+                <td>{{ student.idFrom_Student_RegistrationID.firstName }} {{ student.idFrom_Student_RegistrationID.lastName }}</td>
+                <td>{{ student.studentID }}</td>
+                <td>{{ student.studentRoll }}</td>
+                <td>{{ student.idFrom_Student_RegistrationID.semester }}</td>
+                <td>{{ student.idFrom_Student_RegistrationID.phoneNumber }}</td>
+                <td>{{ student.idFrom_Student_RegistrationID.age }}</td>
+                <td>{{ student.idFrom_Student_RegistrationID.gender }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</header>
+</body>
+</html>

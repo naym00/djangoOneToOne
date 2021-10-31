@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert Registration ID</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: powderblue;
+        }
+        header{
+            background-size: cover;
+            background-position: center;
+        }
+        .HeadLine {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 55px;
+        }
+        .Second_Block {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        input[type=text], select {
+            font-family: arial, sans-serif;
+            font-size: 20px;
+            width: 100%;
+            padding: 12px 15px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            font-family: arial, sans-serif;
+            font-size: 20px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <p class="HeadLine">{{ text }}</p>
+    <div class="Second_Block">
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Student ID:</h3> {{ data.studentID }}<br>
+            <h3>Student Roll:</h3> {{ data.studentRoll }}<br>
+            <h3>Select Yourself:</h3> {{ data.idFrom_Student_RegistrationID }}<br>
+            <input class="Submit" type="submit" value="Submit">
+        </form>
+    </div>
+</header>
+</body>
+</html>

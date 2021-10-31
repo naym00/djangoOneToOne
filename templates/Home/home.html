@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: powderblue;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .StudentList {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            transition-duration: 0.4s;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        .InsertStudent {
+            position: absolute;
+            top: 40%;
+            left: 70%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            transition-duration: 0.4s;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        .HeadLine {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            transition-duration: 0.4s;
+            font-size: 80px;
+        }
+        .StudentList:link, .StudentList:visited, .InsertStudent:link, .InsertStudent:visited {
+            background-color: darkcyan;
+            color: white;
+            font-size: 40px;
+            margin: 10px;
+            padding: 14px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .StudentList:hover, .StudentList:active, .InsertStudent:hover, .InsertStudent:active {
+            background-color: black;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a class="StudentList" href="/studentlist" role="button">Student List</a>
+        <a class="InsertStudent" href="/insertstudent" role="button">Insert Student</a>
+        <p class="HeadLine">{{ headLine }}</p>
+    </header>
+</body>
+</html>
